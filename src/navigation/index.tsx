@@ -20,6 +20,8 @@ import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../typ
 import LinkingConfiguration from './LinkingConfiguration'
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+  if ('jo') {
+  }
   return (
     <NavigationContainer
       linking={LinkingConfiguration}

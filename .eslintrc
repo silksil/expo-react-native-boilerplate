@@ -19,7 +19,7 @@
   },
   "overrides": [
     {
-      // enable the rule only for typescript files (not TSX)
+      // TSX don't have to return something from a function, but normal ts files do
       "files": ["*.ts"],
       "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "error"

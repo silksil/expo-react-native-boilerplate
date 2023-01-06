@@ -11,7 +11,9 @@
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "check-types": "tsc",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json)\"",
-    "check-format": "npm run prettier -- --list-different"
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
+    "validate": "npm-run-all --parallel check-types check-format lint build"
   },
   "jest": {
     "preset": "jest-expo"
