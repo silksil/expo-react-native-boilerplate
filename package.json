@@ -13,7 +13,7 @@
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
     "format": "yarn run prettier -- --write",
     "check-format": "yarn run prettier -- --list-different",
-    "validate": "npm-run-all --parallel check-types check-format lint --bailOnLintWarning true"
+    "validate": "npm-run-all --parallel check-types check-format lint"
   },
   "jest": {
     "preset": "jest-expo"
