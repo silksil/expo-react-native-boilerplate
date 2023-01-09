@@ -1,7 +1,4 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint/eslint-plugin"],
-  "root": true,
   "extends": [
     "@react-native-community",
     "eslint:recommended",
@@ -10,6 +7,9 @@
     "eslint-config-prettier",
     "eslint-config-prettier/@typescript-eslint"
   ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint/eslint-plugin"],
+  "root": true,
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-namespace": "off",
