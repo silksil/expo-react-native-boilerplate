@@ -21,5 +21,8 @@
 
 Through `husky`, `eslint`, `prettier`, `typescript` and `lint-stage` code will be prettified and checked before certain commits:
 
-- pre-commit: before a commit, code will automatically be prettified
-- pre-push: before code will be pushed it will be formatted with prettier, checked on typescript errors/warnings and checked against (eslint) linting rules.
+- `pre-commit`: before a commit, code will automatically be 1.) prettified and 2.) checked against the linter.
+
+-`pre-push`: before code will be pushed it will be 1.)prettified, 2.) checked against the linter and 3.)checked on typescript errors/warnings.
+
+If you want to bypass these checks you can add `--no-verify` to the git command.
