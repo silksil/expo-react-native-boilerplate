@@ -16,14 +16,5 @@
     "react/react-in-jsx-scope": "off",
     "strict": ["error", "never"],
     "@typescript-eslint/explicit-module-boundary-types": "off"
-  },
-  "overrides": [
-    {
-      // TSX don't have to return something from a function, but normal ts files do
-      "files": ["*.ts"],
-      "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": "error"
-      }
-    }
-  ]
+  }
 }

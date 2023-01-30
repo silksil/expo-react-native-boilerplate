@@ -1,34 +1,28 @@
-import { StatusBar } from 'expo-status-bar'
-import { Platform, StyleSheet } from 'react-native'
-import EditScreenInfo from '../components/EditScreenInfo'
+import { Box, Button, Center, useColorMode, Text } from 'native-base'
 
-import { Text, View } from '../components/Themed'
-
-export default function ModalScreen() {
+function PseudoPropsUsage() {
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/ModalScreen.tsx" />
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
-    </View>
+    <Center flex={1}>
+      <Box p={4} maxW="300">
+        <Text fontSize="lg" display="flex" mb="20">
+          The active color mode is{' '}
+          <Text bold fontSize="lg">
+            {colorMode}
+          </Text>
+        </Text>
+        <Button onPress={toggleColorMode}>Toggle</Button>
+      </Box>
+    </Center>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-})
+export default function TabOneScreen() {
+  return (
+    <Box bg="background.default" height="1000">
+      <PseudoPropsUsage />
+      <Button mt={200}> hello</Button>
+      <Box bg="background.default"></Box>
+    </Box>
+  )
+}
