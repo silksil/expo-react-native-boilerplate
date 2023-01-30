@@ -8,11 +8,9 @@
 - [x] clear folder structure
 - [x] ui library: NativeBase
       [x] inlude all colors
-      [ ] inlude colors typography
-      [ ] inlude borderRadius and spacing
-      [ ] Make it easy to switch between themes through useColorSheme
-      [ ] style navigation
-      [ ] load font
+      [x] inlude colors typography
+      [x] inlude borderRadius and spacing
+      [x] style navigation
 
 - [] form libary
   [ ]coupled with UI libary
@@ -21,21 +19,30 @@
   - [ ] caching libary
   - [ ] axios
 - [ ] internatiolization
-- [ ] date libary
 - [ ] deployment setup
 - [ ] debugging integration
+
   - [ ] react native flipper / redux flipper
-- [ ] tests: [https://reactnative.dev/docs/testing-overview](https://reactnative.dev/docs/testing-overview)
-  - [ ] jest
+
+  - [ ] testing
+
     - [ ] unit test
-  - [ ] ui testing
-  - [ ] e2e testing
-- [ ] functionality
+
+  - [ ] UI
+    - [ ] styling alternative based props
+    - [ ] Switch between themes through a toggle
+    - [ ] Deal with background color through semantic variants
+    - [ ] update typescript scheme
+    - [x] load font
+    - [x] shadow
+
+- [ ] configure notifications
+- [ ] date libary
+- [ ] include storybook
+
+- [ ] basic features
   - [ ] authentication
   - [ ] profile page including theme switch
-- [ ] configure deployement
-- [ ] configure notifications
-- [ ] UI
-  - [ ] Switch between themes through a toggle
-  - [ ] Deal with background color through semantic variants
-- [ ] include storybook
+  - [ ] testing: https://reactnative.dev/docs/testing-overview]
+    - [ ] ui testing
+    - [ ] e2e testing

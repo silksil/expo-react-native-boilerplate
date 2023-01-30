@@ -101,14 +101,23 @@ const COMMON = {
 const colors = (colorScheme: 'light' | 'dark') => {
   const light = {
     ...COMMON,
-    background: PRIMARY,
-    gray: GREY,
+    // background: PRIMARY,
+
+    text: {
+      primary: GREY['900'],
+      secondary: GREY['600'],
+      tertiary: GREY['500'],
+    },
   } as const
 
   const dark = {
-    background: PRIMARY,
+    // background: PRIMARY,
+    text: {
+      primary: GREY['100'],
+      secondary: GREY['200'],
+      tertiary: GREY['300'],
+    },
     ...COMMON,
-    gray: GREY,
   } as const
 
   return colorScheme === 'light' ? light : dark

@@ -1,15 +1,12 @@
 import { Box, Button, Center, useColorMode, Text } from 'native-base'
 
 function PseudoPropsUsage() {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { toggleColorMode } = useColorMode()
   return (
     <Center flex={1}>
-      <Box p={4} maxW="300">
-        <Text fontSize="lg" display="flex" mb="20">
-          The active color mode is{' '}
-          <Text bold fontSize="lg">
-            {colorMode}
-          </Text>
+      <Box p={4}>
+        <Text fontSize="lg" display="flex" mb="20" color="text.secondary">
+          Tab one
         </Text>
         <Button onPress={toggleColorMode}>Toggle</Button>
       </Box>
