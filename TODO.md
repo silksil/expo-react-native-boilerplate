@@ -5,6 +5,7 @@
   - [x] lint stage
   - [x] husky
   - [x] commitlint
+  - [ ] commitizen
 - [x] clear folder structure
 - [x] ui library: NativeBase
       [x] inlude all colors
