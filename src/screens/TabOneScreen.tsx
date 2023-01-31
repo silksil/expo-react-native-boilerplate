@@ -1,4 +1,4 @@
-import { Box, Button, Center, useColorMode, Text } from 'native-base'
+import { Box, Button, Center, useColorMode, Text, VStack } from 'native-base'
 import { FormProvider, useForm } from 'react-hook-form'
 import RHFInput from 'src/components/hook_form/RHFInput'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -31,34 +31,36 @@ function PseudoPropsUsage() {
       subscribe: true,
     },
   })
-  const { watch, handleSubmit } = methods
+  const { handleSubmit } = methods
 
-  const onSubmit = async (data: FormValuesProps) => {}
+  const onSubmit = async (data: FormValuesProps) => {
+    console.log('data', data)
+    return
+  }
   return (
-    <Center flex={1}>
-      <Box p={4}>
-        <Button onPress={toggleColorMode}>Toggle</Button>
+    <Box p={4}>
+      <Button onPress={toggleColorMode}>Toggle</Button>
 
-        <Text fontSize="lg" display="flex" mb="20" color="text.secondary">
-          Tab one
-        </Text>
-        <FormProvider {...methods}>
+      <Text fontSize="lg" display="flex" mb="20" color="text.secondary">
+        Tab one
+      </Text>
+      <FormProvider {...methods}>
+        <VStack space={5}>
           <RHFInput label="First name" name="firstName" isRequired />
           <RHFInput label="Last name" name="lastName" />
           <RHFInput label="Password" name="password" isRequired />
           <RHFCheckBox label="Subscribe" name="subscribe" isRequired />
           <Button onPress={handleSubmit(onSubmit)}>Submit</Button>
-        </FormProvider>
-      </Box>
-    </Center>
+        </VStack>
+      </FormProvider>
+    </Box>
   )
 }
 
 export default function TabOneScreen() {
   return (
-    <Box bg="background.default" height="1000">
+    <Box bg="background.default" height="1000" width="100%">
       <PseudoPropsUsage />
-      <Button mt={200}> hello</Button>
       <Box bg="background.default"></Box>
     </Box>
   )
