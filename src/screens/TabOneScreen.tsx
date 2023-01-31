@@ -1,4 +1,4 @@
-import { Box, Button, Center, useColorMode, Text, VStack } from 'native-base'
+import { Box, Button, useColorMode, Text, VStack } from 'native-base'
 import { FormProvider, useForm } from 'react-hook-form'
 import RHFInput from 'src/components/hook_form/RHFInput'
 import { yupResolver } from '@hookform/resolvers/yup'

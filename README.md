@@ -1,20 +1,23 @@
 # Tech Stack
 
-| Library          | Category         | Description                                  |
-| ---------------- | ---------------- | -------------------------------------------- |
-| React Native     | Mobile Framework | Cross-platform mobile framework              |
-| React            | UI Framework     | UI framework                                 |
-| Expo             | SDK              | React Native framework                       |
-| TypeScript       | Language         | Static typechecking                          |
-| React Navigation | Navigation       | Navigation framework                         |
-| Jest             | Test Runner      | Standard test runner for JS apps             |
-| date-fns         | Date library     | Date library                                 |
-| AsyncStorage     | Persistence      | State persistence                            |
-| Eslint           | Static testing   | Forces code style and tracks errors          |
-| Husky            | Static testing   | Run commands after certain git hooks         |
-| Prettier         | Static testing   | Takes care of code formatting                |
-| Lint-stage       | Static testing   | Helps running linter only to staged git file |
-| CommitLint       | Commit messages  | Enforces properly formatted commit messages  |
+| Library          | Category          | Description                                  |
+| ---------------- | ----------------- | -------------------------------------------- |
+| React Native     | Mobile Framework  | Cross-platform mobile framework              |
+| React            | UI Library        | UI framework                                 |
+| Expo             | SDK               | React Native framework                       |
+| TypeScript       | Language          | Static typechecking                          |
+| React Navigation | Navigation        | Navigation framework                         |
+| NativeBase       | Component library | UI component library                         |
+| Eslint           | Static testing    | Forces code style and tracks errors          |
+| Husky            | Static testing    | Run commands after certain git hooks         |
+| Prettier         | Static testing    | Takes care of code formatting                |
+| Lint-stage       | Static testing    | Helps running linter only to staged git file |
+| CommitLint       | Static testing    | Enforces properly formatted commit messages  |
+| React Hook Form  | Forms             | To handle form state                         |
+| Yup              | Forms             | To handle form validation                    |
+| AsyncStorage     | State management  | State persistence                            |
+| Jest             | Testing           | Standard test runner for JS apps             |
+| date-fns         | Date library      | Date library                                 |
 
 # Development tools
 
@@ -26,9 +29,7 @@ Through `husky`, `eslint`, `prettier`, `typescript` and `lint-stage` code will b
 
 -`pre-push`: before code will be pushed it will be 1.)prettified, 2.) checked against the linter and 3.)checked on typescript errors/warnings.
 
-If you want to bypass these checks you can add `--no-verify` to the git command.
-
-# Components
+# Styling
 
 NativeBase is used a component libary in the project. To customize the components see their documentation:
 

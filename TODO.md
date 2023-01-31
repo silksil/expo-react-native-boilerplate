@@ -13,8 +13,7 @@
       [x] inlude borderRadius and spacing
       [x] style navigation
 
-- [] form libary
-  [ ]coupled with UI libary
+- [x] form libary
 - [ ] state libary
   - [ ] redux
   - [ ] caching libary
