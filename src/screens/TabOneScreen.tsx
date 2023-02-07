@@ -4,6 +4,7 @@ import RHFInput from 'src/components/hook_form/RHFInput'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import RHFCheckBox from 'src/components/hook_form/RHFCheckBox'
+import { useTranslation } from 'react-i18next'
 
 type FormValuesProps = {
   firstName: string
@@ -21,6 +22,7 @@ const RegisterSchema = Yup.object().shape({
 })
 
 function PseudoPropsUsage() {
+  const { t, i18n } = useTranslation()
   const { toggleColorMode } = useColorMode()
   const methods = useForm<FormValuesProps>({
     resolver: yupResolver(RegisterSchema),
@@ -37,11 +39,14 @@ function PseudoPropsUsage() {
     console.log('data', data)
     return
   }
+
   return (
     <Box p={4}>
       <Button onPress={toggleColorMode}>Toggle</Button>
-
+      <Button onPress={() => i18n.changeLanguage('en')}>English</Button>
+      <Button onPress={() => i18n.changeLanguage('nl')}>Dutch</Button>
       <Text fontSize="lg" display="flex" mb="20" color="text.secondary">
+        {t('')}
         Tab one
       </Text>
       <FormProvider {...methods}>
