@@ -18,9 +18,9 @@
   - [ ] redux
   - [ ] caching libary
   - [ ] axios
-- [ ] internatiolization
-  - [ ] typescript support
-  - [] custom hook to change the language, return current lang and display all available languages
+- [x] internatiolization
+  - [x] typescript support
+  - [x] custom hook to change the language, return current lang and display all available languages
 - [ ] deployment setup
 - [ ] debugging integration
 

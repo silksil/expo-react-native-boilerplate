@@ -1,10 +1,12 @@
-import enLocales from './langs/en'
-import nlLocales from './langs/nl'
+import enLocales from './langs/en/index'
+import nlLocales from './langs/nl/index'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import languageDetector from './languageDetector'
 
-const resources = {
+export const defaultNS = 'translation'
+
+export const resources = {
   en: { translation: enLocales },
   nl: { translation: nlLocales },
 }
@@ -15,6 +17,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    defaultNS,
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,

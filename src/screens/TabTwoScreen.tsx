@@ -1,4 +1,5 @@
 import { Box, Button, Center, useColorMode, Text } from 'native-base'
+import useLocales from 'src/locales/useLocales'
 
 function PseudoPropsUsage() {
   const { colorMode, toggleColorMode } = useColorMode()
