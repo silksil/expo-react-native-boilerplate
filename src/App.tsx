@@ -5,16 +5,8 @@ import useCachedResources from './hooks/useCachedResources'
 import Navigation from './navigation'
 import ThemeProvider from './theme'
 import './locales'
-
-import 'react-i18next'
-import en from './locales/langs/en'
-
-declare module 'react-i18next' {
-  interface CustomTypeOptions {
-    defaultNS: 'common'
-    resources: typeof en
-  }
-}
+import { ApiProvider } from '@reduxjs/toolkit/dist/query/react'
+import { baseApi } from './services/baseApi'
 
 function App() {
   const isLoadingComplete = useCachedResources()
@@ -23,12 +15,14 @@ function App() {
     return null
   } else {
     return (
-      <ThemeProvider>
-        <SafeAreaProvider>
-          <Navigation />
-          <StatusBar />
-        </SafeAreaProvider>
-      </ThemeProvider>
+      <ApiProvider api={baseApi}>
+        <ThemeProvider>
+          <SafeAreaProvider>
+            <Navigation />
+            <StatusBar />
+          </SafeAreaProvider>
+        </ThemeProvider>
+      </ApiProvider>
     )
   }
 }

@@ -3,6 +3,9 @@ import * as Localization from 'expo-localization'
 
 const LANGUAGE_KEY = '@AppIntl:language'
 
+/**
+ * Used to detect the language of the device either from AsyncStorage or from the device itself.
+ */
 const languageDetector = {
   type: 'languageDetector',
   async: true,

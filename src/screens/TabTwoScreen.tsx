@@ -1,5 +1,6 @@
-import { Box, Button, Center, useColorMode, Text } from 'native-base'
-import useLocales from 'src/locales/useLocales'
+import { useNavigation } from '@react-navigation/native'
+import { Box, Button, Center, useColorMode, Text, List } from 'native-base'
+import { useGetTodosQuery } from 'src/services/post'
 
 function PseudoPropsUsage() {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -19,11 +20,15 @@ function PseudoPropsUsage() {
 }
 
 export default function TabOneScreen() {
+  const { data: todos, isError, isLoading, error } = useGetTodosQuery()
+
+  if (isLoading) return <p>Loading...</p>
+  if (isError) return <p>{JSON.stringify(error)}</p>
   return (
-    <Box bg="background.default" height="1000">
-      <PseudoPropsUsage />
-      <Button mt={200}> hello</Button>
-      <Box bg="background.default"></Box>
-    </Box>
+    <>
+      {todos?.map(todo => (
+        <Text key={todo.id}>{todo.title}</Text>
+      ))}
+    </>
   )
 }

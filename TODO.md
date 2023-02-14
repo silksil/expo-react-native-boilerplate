@@ -12,12 +12,11 @@
       [x] inlude colors typography
       [x] inlude borderRadius and spacing
       [x] style navigation
-
 - [x] form libary
 - [ ] state libary
-  - [ ] redux
-  - [ ] caching libary
-  - [ ] axios
+
+  - [ ] post requests
+
 - [x] internatiolization
   - [x] typescript support
   - [x] custom hook to change the language, return current lang and display all available languages
@@ -25,11 +24,8 @@
 - [ ] debugging integration
 
   - [ ] react native flipper / redux flipper
-
   - [ ] testing
-
     - [ ] unit test
-
   - [ ] UI
     - [ ] styling alternative based props
     - [ ] Switch between themes through a toggle
