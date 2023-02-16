@@ -13,18 +13,19 @@
       [x] inlude borderRadius and spacing
       [x] style navigation
 - [x] form libary
+- [x] internatiolization
+  - [x] typescript support
+  - [x] custom hook to change the language, return current lang and display all available languages
 - [ ] state libary
 
   - [x] make it work with mock data
   - [x] see whether we need to create a redux story instread of creating an ApiProvider
-  - [x] have sstory that mixes server state with client state
-    [] check the store config: persis
+  - [x] have story that mixes server state with client state
+  - [x] check the store config: persis
+  - [ ] configure a slice
   - [ ] include authentication headers in the requests
   - [ ] include error type
 
-- [x] internatiolization
-  - [x] typescript support
-  - [x] custom hook to change the language, return current lang and display all available languages
 - [ ] deployment setup
 - [ ] debugging integration
 

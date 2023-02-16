@@ -14,8 +14,6 @@ import { configApi } from 'src/services/configApi'
 import { setupListeners } from '@reduxjs/toolkit/query/react'
 
 /**
- * @remarks
- * set the persist configuration
  *
  * @resources
  * Usage with redux persist: https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist
@@ -29,10 +27,7 @@ const persistConfig = {
   version: 1,
   storage: AsyncStorage,
 
-  /**
-   * Blacklist which reducers not to persist
-   *  As advised by the redux docs, we don't want to persist the RTK Query state
-   */
+  // Blacklist which reducers not to persist: redux docs suggest not to persist the RTK Query state
   blacklist: [configApi.reducerPath],
 }
 
