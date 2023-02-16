@@ -15,7 +15,12 @@
 - [x] form libary
 - [ ] state libary
 
-  - [ ] post requests
+  - [x] make it work with mock data
+  - [x] see whether we need to create a redux story instread of creating an ApiProvider
+  - [x] have sstory that mixes server state with client state
+    [] check the store config: persis
+  - [ ] include authentication headers in the requests
+  - [ ] include error type
 
 - [x] internatiolization
   - [x] typescript support

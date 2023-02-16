@@ -5,8 +5,10 @@ import useCachedResources from './hooks/useCachedResources'
 import Navigation from './navigation'
 import ThemeProvider from './theme'
 import './locales'
-import { ApiProvider } from '@reduxjs/toolkit/dist/query/react'
-import { baseApi } from './services/baseApi'
+
+import { Provider } from 'react-redux'
+import { persistor, store } from './store/store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 function App() {
   const isLoadingComplete = useCachedResources()
@@ -15,14 +17,16 @@ function App() {
     return null
   } else {
     return (
-      <ApiProvider api={baseApi}>
-        <ThemeProvider>
-          <SafeAreaProvider>
-            <Navigation />
-            <StatusBar />
-          </SafeAreaProvider>
-        </ThemeProvider>
-      </ApiProvider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemeProvider>
+            <SafeAreaProvider>
+              <Navigation />
+              <StatusBar />
+            </SafeAreaProvider>
+          </ThemeProvider>
+        </PersistGate>
+      </Provider>
     )
   }
 }

@@ -1,4 +1,4 @@
-import { baseApi } from './baseApi'
+import { configApi } from './configApi'
 
 type Todo = {
   userId: number
@@ -15,7 +15,7 @@ type Todo = {
  * Examples: https://redux-toolkit.js.org/rtk-query/usage/examples
  *
  */
-export const postApi = baseApi.injectEndpoints({
+export const todoApi = configApi.injectEndpoints({
   endpoints: builder => ({
     getTodos: builder.query<Todo[], void>({
       query: () => '/todos',
@@ -37,4 +37,4 @@ export const postApi = baseApi.injectEndpoints({
   overrideExisting: true,
 })
 
-export const { useGetTodosQuery, useAddTodoMutation } = postApi
+export const { useGetTodosQuery, useAddTodoMutation } = todoApi

@@ -22,7 +22,7 @@ const baseQueryWithRetry = retry(baseQuery, { maxRetries: 3 })
  * @resources
  * Code splitting: https://redux-toolkit.js.org/rtk-query/usage/code-splitting
  */
-export const baseApi = createApi({
+export const configApi = createApi({
   baseQuery: baseQueryWithRetry,
   /**
    * Tag types must be defined in the original API definition
