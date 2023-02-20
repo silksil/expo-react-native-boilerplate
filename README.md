@@ -11,7 +11,7 @@
 | Eslint           | Static testing    | Forces code style and tracks errors          |
 | Husky            | Static testing    | Run commands after certain git hooks         |
 | Prettier         | Static testing    | Takes care of code formatting                |
-| Lint-stage       | Static testing    | Helps running linter only to staged git file |
+| Lint-stage       | Static testing    | Helps running linter only to staged git file  |
 | CommitLint       | Static testing    | Enforces properly formatted commit messages  |
 | React Hook Form  | Forms             | To handle form state                         |
 | Yup              | Forms             | To handle form validation                    |

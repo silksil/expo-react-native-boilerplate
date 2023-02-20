@@ -6,6 +6,8 @@ import * as Yup from 'yup'
 import RHFCheckBox from 'src/components/hook_form/RHFCheckBox'
 import { useTranslation } from 'react-i18next'
 import useLocales from 'src/locales/useLocales'
+import { useTypedDispatch, useTypedSelector } from 'src/store/store'
+import { toggleThemeMode } from 'src/store/settingsSlice'
 
 type FormValuesProps = {
   firstName: string
@@ -25,6 +27,8 @@ const RegisterSchema = Yup.object().shape({
 function PseudoPropsUsage() {
   const { t } = useTranslation()
   const { allLangs, onChangeLang } = useLocales()
+  const isDarkMode = useTypedSelector(state => state.settings.isDarkMode)
+  const dispatch = useTypedDispatch()
 
   const { toggleColorMode } = useColorMode()
   const methods = useForm<FormValuesProps>({
@@ -45,7 +49,7 @@ function PseudoPropsUsage() {
 
   return (
     <Box p={4}>
-      <Button onPress={toggleColorMode}>Toggle</Button>
+      <Button onPress={() => dispatch(toggleThemeMode())}>Toggle</Button>
       {allLangs.map(lang => (
         <Button onPress={() => onChangeLang(lang.value)}>{lang.label}</Button>
       ))}

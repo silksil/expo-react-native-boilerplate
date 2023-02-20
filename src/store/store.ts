@@ -12,6 +12,8 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { configApi } from 'src/services/configApi'
 import { setupListeners } from '@reduxjs/toolkit/query/react'
+import settingsSlice from './settingsSlice'
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
 /**
  *
@@ -20,8 +22,8 @@ import { setupListeners } from '@reduxjs/toolkit/query/react'
  * Helpful tutorial: https://edvins.io/how-to-use-redux-persist-with-redux-toolkit
  * Helpful discussion about persisting RTK Query state: https://github.com/reduxjs/redux-toolkit/issues/1400
  * About the setupListeners:  https://redux-toolkit.js.org/rtk-query/api/setupListeners
+ * Usage with typescript: https://redux.js.org/tutorials/typescript-quick-start
  */
-
 const persistConfig = {
   key: 'root',
   version: 1,
@@ -33,9 +35,7 @@ const persistConfig = {
 
 // combine reducers
 const reducers = combineReducers({
-  //   include other reducers here, example:
-  //  someSlice: sliceReducer,
-
+  settings: settingsSlice,
   [configApi.reducerPath]: configApi.reducer,
 })
 
@@ -61,3 +61,10 @@ setupListeners(store.dispatch)
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
 export const persistor = persistStore(store)
+
+/**
+ * @remarks
+ *Use throughout your app instead of plain `useSelector` and 'useDispatch'
+ */
+export const useTypedDispatch: () => AppDispatch = useDispatch
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector
