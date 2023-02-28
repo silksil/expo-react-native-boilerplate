@@ -49,7 +49,7 @@ function PseudoPropsUsage() {
 
   return (
     <Box p={4}>
-      <Button onPress={() => dispatch(toggleThemeMode())}>Toggle</Button>
+      <Button onPress={toggleColorMode}>Toggle</Button>
       {allLangs.map(lang => (
         <Button onPress={() => onChangeLang(lang.value)}>{lang.label}</Button>
       ))}
