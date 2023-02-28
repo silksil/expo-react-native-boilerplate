@@ -50,3 +50,5 @@
   - [ ] testing: https://reactnative.dev/docs/testing-overview]
     - [ ] ui testing
     - [ ] e2e testing
+
+    

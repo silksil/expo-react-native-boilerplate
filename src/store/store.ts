@@ -64,7 +64,7 @@ export const persistor = persistStore(store)
 
 /**
  * @remarks
- *Use throughout your app instead of plain `useSelector` and 'useDispatch'
+ * Use throughout your app instead of plain `useSelector` and 'useDispatch'
  */
 export const useTypedDispatch: () => AppDispatch = useDispatch
 export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector

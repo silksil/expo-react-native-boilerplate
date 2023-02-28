@@ -13,10 +13,7 @@ import useColorScheme from '../hooks/useColorScheme'
 import TabOneScreen from '../screens/TabOneScreen'
 import TabTwoScreen from '../screens/TabTwoScreen'
 import { RootTabParamList, RootTabScreenProps } from '../@types/navigation'
-/**
- * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
+
 const BottomTab = createBottomTabNavigator<RootTabParamList>()
 
 export function BottomTabNavigator() {

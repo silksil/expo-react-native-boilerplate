@@ -2,12 +2,13 @@ import { registerRootComponent } from 'expo'
 import { StatusBar } from 'expo-status-bar'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import useCachedResources from './hooks/useCachedResources'
-import Navigation from './navigation'
-import ThemeProvider from './theme'
+import ThemeProvider from './constants/theme'
 import './locales'
 import { Provider } from 'react-redux'
 import { persistor, store } from './store/store'
 import { PersistGate } from 'redux-persist/integration/react'
+import Navigator from './navigation'
+import { AuthProvider } from './auth/FirebaseContext'
 
 function App() {
   const isLoadingComplete = useCachedResources()
@@ -16,16 +17,18 @@ function App() {
     return null
   } else {
     return (
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <ThemeProvider>
-            <SafeAreaProvider>
-              <Navigation />
-              <StatusBar />
-            </SafeAreaProvider>
-          </ThemeProvider>
-        </PersistGate>
-      </Provider>
+      <AuthProvider>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <ThemeProvider>
+              <SafeAreaProvider>
+                <Navigator />
+                <StatusBar />
+              </SafeAreaProvider>
+            </ThemeProvider>
+          </PersistGate>
+        </Provider>
+      </AuthProvider>
     )
   }
 }
