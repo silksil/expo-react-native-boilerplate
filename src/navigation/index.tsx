@@ -2,10 +2,11 @@ import React from 'react'
 import { ColorSchemeName } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { navigationDarkTheme, navigationLightTheme } from 'src/constants/theme/colors'
 import { BottomTabNavigator } from './BottomTabNavigator'
 import { AuthStackNavigator } from './AuthNavigator'
 import { useAuth } from 'src/auth/useAuth'
+import useColorScheme from 'src/hooks/useColorScheme'
+import { navigationDarkTheme, navigationLightTheme } from 'src/theme/colors'
 
 export interface RootParams {
   scheme?: ColorSchemeName
@@ -17,7 +18,8 @@ export type RootStackParams = {
 
 const StackNav = createNativeStackNavigator<RootStackParams>()
 
-const RootNavigator: React.FC<RootParams> = ({ scheme }) => {
+const RootNavigator: React.FC<RootParams> = () => {
+  const scheme = useColorScheme()
   const { isAuthenticated } = useAuth()
   return (
     <NavigationContainer theme={scheme === 'dark' ? navigationDarkTheme : navigationLightTheme}>
