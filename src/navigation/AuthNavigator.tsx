@@ -1,14 +1,12 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { SignupScreen } from 'src/screens/auth/SignupScreen'
+import { RegisterScreen } from 'src/screens/auth/RegisterScreen'
+import { LoginScreen } from 'src/screens/auth/LoginScreen'
 
 export type AuthStackParams = {
   Welcome?: undefined
-  Login: {
-    signInMethods: Array<string>
-    email: string
-    title?: string
-  }
+  Login?: undefined
+  Register?: undefined
 }
 
 const StackNav = createNativeStackNavigator<AuthStackParams>()
@@ -21,7 +19,12 @@ export /**
 const AuthStackNavigator = () => {
   return (
     <StackNav.Navigator screenOptions={{ gestureEnabled: true }} initialRouteName="Welcome">
-      <StackNav.Screen name="Login" component={SignupScreen} options={{ headerShown: false }} />
+      <StackNav.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+      <StackNav.Screen
+        name="Register"
+        component={RegisterScreen}
+        options={{ headerShown: false }}
+      />
     </StackNav.Navigator>
   )
 }

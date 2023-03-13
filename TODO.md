@@ -28,6 +28,7 @@
   - [ ] include error type for RTQ query
 
 - [ ] deployment setup
+- [ ] Sentry error logging
 - [ ] debugging integration
 
   - [ ] react native flipper / redux flipper
@@ -38,7 +39,7 @@
     - [x ] Switch between themes through a toggle
     - [ ] Deal with background color through semantic variants
     - [ ] update typescript scheme
-    - [x] load font
+    - [ ] load font
     - [x] shadow
 
 - [ ] configure notifications
@@ -50,5 +51,3 @@
   - [ ] testing: https://reactnative.dev/docs/testing-overview]
     - [ ] ui testing
     - [ ] e2e testing
-
-    

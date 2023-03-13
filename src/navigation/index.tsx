@@ -7,6 +7,7 @@ import { AuthStackNavigator } from './AuthNavigator'
 import { useAuth } from 'src/auth/useAuth'
 import useColorScheme from 'src/hooks/useColorScheme'
 import { navigationDarkTheme, navigationLightTheme } from 'src/theme/colors'
+import { useColorMode } from 'native-base'
 
 export interface RootParams {
   scheme?: ColorSchemeName
@@ -19,10 +20,10 @@ export type RootStackParams = {
 const StackNav = createNativeStackNavigator<RootStackParams>()
 
 const RootNavigator: React.FC<RootParams> = () => {
-  const scheme = useColorScheme()
+  const { colorMode } = useColorMode()
   const { isAuthenticated } = useAuth()
   return (
-    <NavigationContainer theme={scheme === 'dark' ? navigationDarkTheme : navigationLightTheme}>
+    <NavigationContainer theme={colorMode === 'dark' ? navigationDarkTheme : navigationLightTheme}>
       <StackNav.Navigator>
         <StackNav.Screen
           name="Main"
